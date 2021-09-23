@@ -1,0 +1,23 @@
+#!/bin/python3
+import sys
+import json
+
+help_menu = \
+"""Usage: jsoncdb [COMMAND] [FILE]
+JSON database interaction command-line tool.
+
+Commands:
+  INIT			initialise file for usage  
+  ADD_KEY <key>		add key to database
+  DEL_KEY <key>		remove key from database
+  ADD <item> <key>	add item to database
+  DEL <item> <key>	remove item from database
+  GET <key> <item>	query item from database
+
+Examples:
+  jsoncdb INIT data.db		# initialises data.db for use
+  jsoncdb ADD_KEY "fruit"	# adds key "fruit" in database
+  jsoncdb ADD "banana" "fruit"	# adds banana to fruit in database
+
+"""
+print(help_menu)
