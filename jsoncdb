@@ -7,17 +7,51 @@ help_menu = \
 JSON database interaction command-line tool.
 
 Commands:
-  INIT			initialise file for usage  
-  ADD_KEY <key>		add key to database
-  DEL_KEY <key>		remove key from database
-  ADD <item> <key>	add item to database
-  DEL <item> <key>	remove item from database
-  GET <key> <item>	query item from database
+  ADD_KEY <key> TO <location>			add key to database
+  DEL_KEY <key> TO <location>			remove key from database
+  ADD <item> TO <keys>				add item to database
+  DEL <item> FROM <keys>			remove item from database
+  GET <key>					query item from database
 
 Examples:
-  jsoncdb INIT data.db		# initialises data.db for use
-  jsoncdb ADD_KEY "fruit"	# adds key "fruit" in database
-  jsoncdb ADD "banana" "fruit"	# adds banana to fruit in database
+  ADD_KEY "food" data.db			adds key "food" in db root
+  ADD_KEY "fruit" "food" data.db		adds key "fruit" to "food"
+  ADD "pear" TO "fruit" "food" data.db		adds pear to fruit in db
+  ADD "apple" TO "fruit" "food" data.db		adds apple to fruit in db
 
+  GET "food" data.db				queries "food" key
+  	"fruit"					returns "food" keys
+
+  GET "food" "fruit" data.db			queries "fruit" in "food"
+  	"pear", "apple"				returns "fruit" keys
 """
-print(help_menu)
+
+def get_arg(n):
+    try:
+        return sys.argv[n]
+    except IndexError:
+        print(help_menu)
+        exit()
+
+
+command_word = get_arg(1)
+if command_word not in ["ADD_KEY", "DEL_KEY", "ADD", "DEL", "GET"]:
+    print(help_menu)
+    exit()
+file_path = get_arg(-1)
+
+
+if command_word in "ADD_KEY":
+    
+
+print(command_word)
+
+
+
+
+
+
+
+
+
+
