@@ -26,6 +26,10 @@ Examples:
   	"pear", "apple"				returns "fruit" keys
 """
 
+
+def add_key(key, location)
+
+
 def get_arg(n):
     try:
         return sys.argv[n]
@@ -39,12 +43,13 @@ if command_word not in ["ADD_KEY", "DEL_KEY", "ADD", "DEL", "GET"]:
     print(help_menu)
     exit()
 file_path = get_arg(-1)
-
+middle_args = sys.argv[2:-1]
+print(middle_args)
 
 if command_word in "ADD_KEY":
-    
+    middle_args = " ".join(middle_args.join).
+    key, location = middle_args.split("TO")
 
-print(command_word)
 
 
 
